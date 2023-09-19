@@ -1,4 +1,4 @@
-# NAME:         FIXME
+# NAME:         James Middleton
 # ASSIGNMENT:   Project 1
 
 # Example
@@ -6,8 +6,15 @@ def hello_world():
     return "Hello!"
 
 # 1
-def squared_sum(array):
-    return 0
+
+def squared_sum(lst):
+
+    sum_of_squares = sum(x**2 for x in lst)
+
+    return sum_of_squares
+
+result = squared_sum([])
+print(result)
 
 # 2
 def mix(a, b):
