@@ -1,41 +1,38 @@
-# NAME:         James Middleton
+# NAME:        by James Middleton
 # ASSIGNMENT:   Project 1
 
 # Example
 def hello_world():
     return "Hello!"
-
+print(hello_world)
 # 1
-
 def squared_sum(lst):
+    total = 0
+    for num in lst:
+        total += num ** 2
+    return total
 
-    sum_of_squares = sum(x**2 for x in lst)
+# Test Cases
+print(squared_sum([]))
+print(squared_sum([5, -2, 3]))
+print(squared_sum([-3, 4]))
+print(squared_sum([7, -1, 15, 0]))
 
-    return sum_of_squares
 
-result = squared_sum([])
-print(result)
-
-#2
+# 2
 def mix(str1, str2):
-     result = ""
-
-     min_length = min(len(str1), len(str2))
-    
-     for i in range(min_length):
+    result = ''
+    min_len = min(len(str1), len(str2))
+    for i in range(min_len):
         result += str1[i] + str2[i]
-     
-     if len(str1) > min_length:
-        result += str1[min_length:]
-     elif len(str2) > min_length:
-        result += str2[min_length:]
 
-     return result
+    result += str1[min_len:] + str2[min_len:]
+    return result
 
-string1 = "hello"
-string2 = "there"
-
-#print(mix(string1, string2)) 
+print(mix("hello", "there"))
+print(mix("1234", "abcd"))
+print(mix("12", "abcd"))
+print(mix("1234", "ab"))
 
 def main():
     print("squared sum: ", squared_sum([-3, 4]))
